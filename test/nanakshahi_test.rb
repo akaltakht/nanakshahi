@@ -5,7 +5,12 @@ class NanakshahiTest < Minitest::Test
     refute_nil ::Nanakshahi::VERSION
   end
 
-  def test_it_does_something_useful
-    assert false
+  # def test_today_class_method_creates_a_new_year_object
+  #   nanakshahi = Nanakshahi.today
+  #   assert nanakshahi.year == Date.today.year
+  # end
+
+  def test_today_method
+    assert Nanakshahi.today == "Today is the day"
   end
 end

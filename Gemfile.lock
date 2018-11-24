@@ -1,0 +1,22 @@
+PATH
+  remote: .
+  specs:
+    nanakshahi (0.1.1)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    minitest (5.11.3)
+    rake (10.5.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (~> 1.17)
+  minitest (~> 5.0)
+  nanakshahi!
+  rake (~> 10.0)
+
+BUNDLED WITH
+   1.17.1
