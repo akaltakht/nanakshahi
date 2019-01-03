@@ -5,12 +5,8 @@ class NanakshahiTest < Minitest::Test
     refute_nil ::Nanakshahi::VERSION
   end
 
-  # def test_today_class_method_creates_a_new_year_object
-  #   nanakshahi = Nanakshahi.today
-  #   assert nanakshahi.year == Date.today.year
-  # end
-
-  def test_today_method
-    assert Nanakshahi.today == "Today is the day"
+  def test_ਪਹਿਲੀ_ਤਰੀਕ_ਨਾਨਕਸ਼ਾਹੀ
+    date = Nanakshahi.new
+    assert date.gregorian_date == Date.new(1469, 3, 14)
   end
 end
