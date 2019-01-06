@@ -5,11 +5,6 @@ class NanakshahiTest < Minitest::Test
     refute_nil ::Nanakshahi::VERSION
   end
 
-  # def test_default_date_gregorian
-  #   date = Nanakshahi.new
-  #   assert date.gregorian_date == Date.new(1469, 3, 14)
-  # end
-
   def test_default_date_nanakshahi
     date = Nanakshahi.new
     assert date == Nanakshahi.new(1, 1, 1)
@@ -22,11 +17,11 @@ class NanakshahiTest < Minitest::Test
 
   # Two test cases from the Pal Singh Purewal's paper
   def test_from_gregorian_returns_correct_ndate_object
-    assert Nanakshahi.from_gregorian(1469, 3, 14) == Nanakshahi.new(1,1,1)
+    assert Nanakshahi.from_gregorian(1469, 3, 14) == Nanakshahi.new(1, 1, 1)
   end
 
   def test_14_march_2004_CE_from_gregorian
-    assert Nanakshahi.from_gregorian(2004, 3, 14) == Nanakshahi.new(536,1,1)
+    assert Nanakshahi.from_gregorian(2004, 3, 14) == Nanakshahi.new(536, 1, 1)
   end
 
   # Test for leap year dates
@@ -44,37 +39,36 @@ class NanakshahiTest < Minitest::Test
   # Thus it may appear that a leap year in CE as non-leap in Nanakshahi
   # and the year prior in Nanakshahi as leap
   def test_last_day_of_non_leap_nanakshahi_year_is_phagun_30
-    assert Nanakshahi.from_gregorian(2001,3,13) == Nanakshahi.new(532, 12, 30)
+    assert Nanakshahi.from_gregorian(2001, 3, 13) == Nanakshahi.new(532, 12, 30)
   end
 
   def test_last_day_of_leap_nanakshahi_year_is_phagun_31
-    assert Nanakshahi.from_gregorian(2000,3,13) == Nanakshahi.new(531, 12, 31)
+    assert Nanakshahi.from_gregorian(2000, 3, 13) == Nanakshahi.new(531, 12, 31)
   end
 
   # Test #to_gregorian method
   def test_1_chet_1_to_gregorian
-    assert Nanakshahi.new.to_gregorian == Date.new(1469,3,14)
+    assert Nanakshahi.new.to_gregorian == Date.new(1469, 3, 14)
   end
 
   def test_Nanakshahi_536_1_1_to_gregorian
-    assert Nanakshahi.new(536,1,1).to_gregorian == Date.new(2004, 3, 14)
+    assert Nanakshahi.new(536, 1, 1).to_gregorian == Date.new(2004, 3, 14)
   end
 
   # Test Comparables
   def test_less_than
-    assert Nanakshahi.new(536,1,1) < Nanakshahi.new(536,1,2)
+    assert Nanakshahi.new(536, 1, 1) < Nanakshahi.new(536, 1, 2)
   end
 
   def test_greater_than
-    assert Nanakshahi.new(536,1,2) > Nanakshahi.new(536,1,1)
+    assert Nanakshahi.new(536, 1, 2) > Nanakshahi.new(536, 1, 1)
   end
 
   def test_equality
-    assert Nanakshahi.new(536,1,1) == Nanakshahi.new(536,1,1)
+    assert Nanakshahi.new(536, 1, 1) == Nanakshahi.new(536, 1, 1)
   end
 
   def test_inequality
-    assert Nanakshahi.new(536,1,2) != Nanakshahi.new(536,1,1)
+    assert Nanakshahi.new(536, 1, 2) != Nanakshahi.new(536, 1, 1)
   end
-
 end
