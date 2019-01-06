@@ -39,6 +39,37 @@ class Nanakshahi
   end
 
   # #
+  # Nanakshahi to Gregorian date
+  #
+  def to_gregorian
+    last_nmonth_of_gyear = 10 # ਪੋਹ
+    last_nday_of_gyear = 18 # ੧੮
+
+    if month <= last_nmonth_of_gyear && day <= last_nday_of_gyear
+      gyear = year + 1468
+    else
+      gyear = year + 1469
+    end
+
+    nanakshahi_months = [
+      (Date.new(gyear, 3, 14)..Date.new(gyear, 4, 13)).to_a,
+      (Date.new(gyear, 4, 14)..Date.new(gyear, 5, 14)).to_a,
+      (Date.new(gyear, 5, 15)..Date.new(gyear, 6, 14)).to_a,
+      (Date.new(gyear, 6, 15)..Date.new(gyear, 7, 15)).to_a,
+      (Date.new(gyear, 7, 16)..Date.new(gyear, 8, 15)).to_a,
+      (Date.new(gyear, 8, 16)..Date.new(gyear, 9, 14)).to_a,
+      (Date.new(gyear, 9, 15)..Date.new(gyear, 10, 14)).to_a,
+      (Date.new(gyear, 10, 15)..Date.new(gyear, 11, 13)).to_a,
+      (Date.new(gyear, 11, 14)..Date.new(gyear, 12, 13)).to_a,
+      (Date.new(gyear, 12, 14)..Date.new(gyear, 12, 31)).to_a.concat((Date.new(gyear, 1, 1)..Date.new(gyear, 1, 12)).to_a),
+      (Date.new(gyear, 1, 13)..Date.new(gyear, 2, 11)).to_a,
+      (Date.new(gyear, 2, 12)..Date.new(gyear, 3, 13)).to_a,
+    ]
+
+    nanakshahi_months[month - 1][day - 1]
+  end
+
+  # #
   # Gregorian to Nanakshahi date
   #
   def self.from_gregorian(gyear, gmonth, gday)
@@ -85,36 +116,5 @@ class Nanakshahi
     nday += 1
 
     Nanakshahi.new(nyear, nmonth, nday)
-  end
-
-  # #
-  # Nanakshahi to Gregorian date
-  #
-  def to_gregorian
-    last_nmonth_of_gyear = 10 # ਪੋਹ
-    last_nday_of_gyear = 18 # ੧੮
-
-    if month <= last_nmonth_of_gyear && day <= last_nday_of_gyear
-      gyear = year + 1468
-    else
-      gyear = year + 1469
-    end
-
-    nanakshahi_months = [
-      (Date.new(gyear, 3, 14)..Date.new(gyear, 4, 13)).to_a,
-      (Date.new(gyear, 4, 14)..Date.new(gyear, 5, 14)).to_a,
-      (Date.new(gyear, 5, 15)..Date.new(gyear, 6, 14)).to_a,
-      (Date.new(gyear, 6, 15)..Date.new(gyear, 7, 15)).to_a,
-      (Date.new(gyear, 7, 16)..Date.new(gyear, 8, 15)).to_a,
-      (Date.new(gyear, 8, 16)..Date.new(gyear, 9, 14)).to_a,
-      (Date.new(gyear, 9, 15)..Date.new(gyear, 10, 14)).to_a,
-      (Date.new(gyear, 10, 15)..Date.new(gyear, 11, 13)).to_a,
-      (Date.new(gyear, 11, 14)..Date.new(gyear, 12, 13)).to_a,
-      (Date.new(gyear, 12, 14)..Date.new(gyear, 12, 31)).to_a.concat((Date.new(gyear, 1, 1)..Date.new(gyear, 1, 12)).to_a),
-      (Date.new(gyear, 1, 13)..Date.new(gyear, 2, 11)).to_a,
-      (Date.new(gyear, 2, 12)..Date.new(gyear, 3, 13)).to_a,
-    ]
-
-    nanakshahi_months[month - 1][day - 1]
   end
 end
