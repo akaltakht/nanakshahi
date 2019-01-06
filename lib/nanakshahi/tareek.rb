@@ -1,6 +1,17 @@
 require "date"
 
 module Nanakshahi
+  # Implementation of date(Tareek) class for Nanakshahi.
+  #
+  # @author Arvinder Singh
+  # @abstract
+  # @since 0.1.0
+  # @attr [Int] year Nanakshahi year
+  # @attr [Int] month Nanakshahi month
+  # @attr [Int] day Nanakshahi day
+  # @attr_reader [Int] year Year value of the Tareek object
+  # @attr_reader [Int] month Month(1-12) value of the Tareek object
+  # @attr_reader [Int] day Day(1-31) value of the Tareek object
   class Tareek
     include Comparable
 
