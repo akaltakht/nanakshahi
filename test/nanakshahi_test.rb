@@ -59,4 +59,22 @@ class NanakshahiTest < Minitest::Test
   def test_Nanakshahi_536_1_1_to_gregorian
     assert Nanakshahi.new(536,1,1).to_gregorian == Date.new(2004, 3, 14)
   end
+
+  # Test Comparables
+  def test_less_than
+    assert Nanakshahi.new(536,1,1) < Nanakshahi.new(536,1,2)
+  end
+
+  def test_greater_than
+    assert Nanakshahi.new(536,1,2) > Nanakshahi.new(536,1,1)
+  end
+
+  def test_equality
+    assert Nanakshahi.new(536,1,1) == Nanakshahi.new(536,1,1)
+  end
+
+  def test_inequality
+    assert Nanakshahi.new(536,1,2) != Nanakshahi.new(536,1,1)
+  end
+
 end

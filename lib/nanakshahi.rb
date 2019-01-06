@@ -23,7 +23,17 @@ class Nanakshahi
   end
 
   def <=>(other)
-    (self.day <=> other.day) && (self.month <=> other.month) && (self.year <=> other.year)
+    return nil unless self.is_a?(Nanakshahi) && other.is_a?(Nanakshahi)
+    # Compare year
+    if ((self.year < other.year) ||
+        (self.year == other.year && self.month < other.month) ||
+        (self.year == other.year && self.month == other.month && self.day < other.day))
+      return -1
+    elsif self.year == other.year && self.month == other.month && self.day == other.day
+      return 0
+    else
+      return 1
+    end
   end
 
   # #
