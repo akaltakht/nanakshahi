@@ -1,7 +1,15 @@
 require "nanakshahi/version"
 require "date"
 
-# Nanakshahi Calendar based on research by Pal Singh Purewal
+# Nanakshahi Calendar date based on research by Pal Singh Purewal
+#
+# @author Arvinder Singh
+# @abstract
+# @since 0.1.0
+# @param [Types] attribute_name a full description of the attribute
+# @attr_reader [Types] name description of a readonly attribute
+# @attr_writer [Types] name description of writeonly attribute
+# @deprecated Describe the reason or provide alt. references here
 class Nanakshahi
   include Comparable
 
@@ -10,13 +18,7 @@ class Nanakshahi
   MONTHS = %w(Chet Vaisakh Jeth Harh Sawan Bhadon Asu Katik Maghar Poh Magh Phagun)
   MONTHS_PA = %w(ਚੇਤ ਵੈਸਾਖ ਜੇਠ ਹਾੜ ਸਾਵਣ ਭਾਦੋਂ ਅੱਸੂ ਕੱਤਕ ਮੱਘਰ ਪੋਹ ਮਾਘ ਫੱਗਣ)
 
-  # #
-  # Create a Nanakshahi date object.
-  #   At rest store the dates both as:
-  #     Gregorian - for calculations and time navigation
-  #     Nanakshahi - for quick recall
-  # attr_reader :gregorian_date, :nanakshahi_date
-  attr_reader :day, :month, :year
+  attr_reader :year, :month, :day
 
   def initialize(year = 1, month = 1, day = 1)
     @day = day
