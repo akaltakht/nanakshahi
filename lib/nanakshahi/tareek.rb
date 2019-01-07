@@ -28,6 +28,9 @@ module Nanakshahi
       @year = year
     end
 
+    # Implementation of spaceship operator to enable comparision
+    #
+    # @author Arvinder Singh
     def <=>(other)
       return nil unless self.is_a?(Nanakshahi::Tareek) && other.is_a?(Nanakshahi::Tareek)
       # Compare year
@@ -122,4 +125,6 @@ module Nanakshahi
       Nanakshahi::Tareek.new(nyear, nmonth, nday)
     end
   end
+
+  protected :<=>
 end
