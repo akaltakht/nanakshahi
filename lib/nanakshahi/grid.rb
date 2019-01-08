@@ -1,5 +1,5 @@
 module Grid
-  # Class method to return a date grid
+  # Class method that return a date grid
   def date_grid(gyear)
     # #
     # The months follow the same index as MONTHS constant

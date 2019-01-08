@@ -5,19 +5,9 @@ require "nanakshahi/gregorian"
 require "nanakshahi/grid"
 
 # Nanakshahi Calendar date based on research by Pal Singh Purewal
+# @author Arvinder Singh
 # @since 0.1.0
 class Nanakshahi
-  # Implementation of date(Tareek) class for Nanakshahi.
-  #
-  # @author Arvinder Singh
-  # @abstract
-  # @since 0.1.0
-  # @attr [Int] year Nanakshahi year
-  # @attr [Int] month Nanakshahi month
-  # @attr [Int] day Nanakshahi day
-  # @attr_reader [Int] year Year value of the Tareek object
-  # @attr_reader [Int] month Month(1-12) value of the Tareek object
-  # @attr_reader [Int] day Day(1-31) value of the Tareek object
   include Comparable
   extend Constants
   extend Gregorian
@@ -52,7 +42,6 @@ class Nanakshahi
 
   # Implementation of spaceship operator to enable comparision
   #
-  # @author Arvinder Singh
   def <=>(other)
     return nil unless self.is_a?(Nanakshahi) && other.is_a?(Nanakshahi)
     # Compare year
