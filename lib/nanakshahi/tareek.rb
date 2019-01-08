@@ -111,8 +111,8 @@ module Nanakshahi
       # Months are 1 indexed, arrays are 0 indexed
       nmonth += 1
       nday += 1
-
-      Nanakshahi::Tareek.new(nyear, nmonth, nday)
+      # Create a new Nanakshahi::Date object
+      self.new(nyear, nmonth, nday)
     end
   end
 
