@@ -1,3 +1,3 @@
-module Nanakshahi
+class Nanakshahi
   VERSION = "0.1.1"
 end

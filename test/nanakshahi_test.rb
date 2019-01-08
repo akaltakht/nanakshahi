@@ -6,31 +6,31 @@ class NanakshahiTest < Minitest::Test
   end
 
   def test_default_date_nanakshahi
-    date = Nanakshahi::Tareek.new
-    assert date == Nanakshahi::Tareek.new(1, 1, 1)
+    date = Nanakshahi.new
+    assert date == Nanakshahi.new(1, 1, 1)
   end
 
   def test_ndate_object
-    ndate = Nanakshahi::Tareek.new(2016, 8, 12)
+    ndate = Nanakshahi.new(2016, 8, 12)
     assert ndate.day == 12
   end
 
   # Two test cases from the Pal Singh Purewal's paper
   def test_from_gregorian_returns_correct_ndate_object
-    assert Nanakshahi::Tareek.from_gregorian(1469, 3, 14) == Nanakshahi::Tareek.new(1, 1, 1)
+    assert Nanakshahi.from_gregorian(1469, 3, 14) == Nanakshahi.new(1, 1, 1)
   end
 
   def test_14_march_2004_CE_from_gregorian
-    assert Nanakshahi::Tareek.from_gregorian(2004, 3, 14) == Nanakshahi::Tareek.new(536, 1, 1)
+    assert Nanakshahi.from_gregorian(2004, 3, 14) == Nanakshahi.new(536, 1, 1)
   end
 
   # Test for leap year dates
   def test_non_leap_year_1_march_falls_on_18_phagun
-    assert Nanakshahi::Tareek.from_gregorian(2001, 3, 1) == Nanakshahi::Tareek.new(532, 12, 18)
+    assert Nanakshahi.from_gregorian(2001, 3, 1) == Nanakshahi.new(532, 12, 18)
   end
 
   def test_leap_year_1_march_falls_on_19_phagun
-    assert Nanakshahi::Tareek.from_gregorian(2000, 3, 1) == Nanakshahi::Tareek.new(531, 12, 19)
+    assert Nanakshahi.from_gregorian(2000, 3, 1) == Nanakshahi.new(531, 12, 19)
   end
 
   # As leap year date falls on the last month of Nanakshahi,
@@ -39,36 +39,36 @@ class NanakshahiTest < Minitest::Test
   # Thus it may appear that a leap year in CE as non-leap in Nanakshahi
   # and the year prior in Nanakshahi as leap
   def test_last_day_of_non_leap_nanakshahi_year_is_phagun_30
-    assert Nanakshahi::Tareek.from_gregorian(2001, 3, 13) == Nanakshahi::Tareek.new(532, 12, 30)
+    assert Nanakshahi.from_gregorian(2001, 3, 13) == Nanakshahi.new(532, 12, 30)
   end
 
   def test_last_day_of_leap_nanakshahi_year_is_phagun_31
-    assert Nanakshahi::Tareek.from_gregorian(2000, 3, 13) == Nanakshahi::Tareek.new(531, 12, 31)
+    assert Nanakshahi.from_gregorian(2000, 3, 13) == Nanakshahi.new(531, 12, 31)
   end
 
   # Test #to_gregorian method
   def test_1_chet_1_to_gregorian
-    assert Nanakshahi::Tareek.new.to_gregorian == Date.new(1469, 3, 14)
+    assert Nanakshahi.new.to_gregorian == Date.new(1469, 3, 14)
   end
 
   def test_Nanakshahi_536_1_1_to_gregorian
-    assert Nanakshahi::Tareek.new(536, 1, 1).to_gregorian == Date.new(2004, 3, 14)
+    assert Nanakshahi.new(536, 1, 1).to_gregorian == Date.new(2004, 3, 14)
   end
 
   # Test Comparables
   def test_less_than
-    assert Nanakshahi::Tareek.new(536, 1, 1) < Nanakshahi::Tareek.new(536, 1, 2)
+    assert Nanakshahi.new(536, 1, 1) < Nanakshahi.new(536, 1, 2)
   end
 
   def test_greater_than
-    assert Nanakshahi::Tareek.new(536, 1, 2) > Nanakshahi::Tareek.new(536, 1, 1)
+    assert Nanakshahi.new(536, 1, 2) > Nanakshahi.new(536, 1, 1)
   end
 
   def test_equality
-    assert Nanakshahi::Tareek.new(536, 1, 1) == Nanakshahi::Tareek.new(536, 1, 1)
+    assert Nanakshahi.new(536, 1, 1) == Nanakshahi.new(536, 1, 1)
   end
 
   def test_inequality
-    assert Nanakshahi::Tareek.new(536, 1, 2) != Nanakshahi::Tareek.new(536, 1, 1)
+    assert Nanakshahi.new(536, 1, 2) != Nanakshahi.new(536, 1, 1)
   end
 end
