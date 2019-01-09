@@ -88,4 +88,16 @@ class NanakshahiTest < Minitest::Test
   def test_today_method
     assert Nanakshahi.today == Date.today.to_nanakshahi
   end
+
+  def test_year_method
+    assert Nanakshahi.new(550, 10, 12).year == 550
+  end
+
+  def test_month_method
+    assert Nanakshahi.new(550, 10, 12).month == 10
+  end
+
+  def test_day_method
+    assert Nanakshahi.new(550, 10, 12).day == 12
+  end
 end
