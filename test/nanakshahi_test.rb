@@ -71,4 +71,14 @@ class NanakshahiTest < Minitest::Test
   def test_inequality
     assert Nanakshahi.new(536, 1, 2) != Nanakshahi.new(536, 1, 1)
   end
+
+  def test_to_s_method
+    assert Nanakshahi.from_gregorian(1460, 9, 10).to_s == "26 Bhadon, 9 Dhundkaal"
+  end
+
+  # Test to_gurmukhi
+  def test_to_gurmikhi_method
+    puts Nanakshahi.from_gregorian(1460, 9, 10).to_gurmukhi
+    assert Nanakshahi.from_gregorian(1460, 9, 10).to_gurmukhi == "੨੬ ਭਾਦੋਂ, ੯ ਧੁੰਦਕਾਲ"
+  end
 end

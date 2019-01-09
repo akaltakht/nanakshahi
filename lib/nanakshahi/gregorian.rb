@@ -11,7 +11,7 @@ module Gregorian
 
     # Implement ਧੁੰਦਕਾਲ(Before Nanak - from Bhai Gurdas's vaar) later
     # Any date prior to nanakshahi_epoch_in_gregorian returns nil for now
-    return nil if gdate < nanakshahi_epoch_in_gregorian
+    # return nil if gdate < nanakshahi_epoch_in_gregorian
 
     # Before Chet 1, it is previous year in Nanakshahi
     if (gmonth <= nanakshahi_epoch_in_gregorian.month) && (gday < nanakshahi_epoch_in_gregorian.day)

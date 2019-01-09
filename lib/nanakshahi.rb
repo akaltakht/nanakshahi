@@ -1,8 +1,15 @@
 require "date"
+require "i18n"
+I18n.load_path << Dir[File.expand_path("config/locales") + "/*.yml"]
 require "nanakshahi/version"
 require "nanakshahi/constants"
 require "nanakshahi/gregorian"
 require "nanakshahi/grid"
+
+# require "byebug"
+# require_relative "nanakshahi/constants"
+# require_relative "nanakshahi/gregorian"
+# require_relative "nanakshahi/grid"
 
 # Nanakshahi Calendar date based on research by Pal Singh Purewal
 # @author Arvinder Singh
@@ -38,6 +45,16 @@ class Nanakshahi
     nanakshahi_months[month - 1][day - 1]
   end
 
+  def to_s
+    era = year < 1 ? :Dhundkaal : :Nanakshahi
+    "#{day} #{I18n.t(:nanakshahi_months)[month]}, #{year_zero_correction(year)} #{era}"
+  end
+
+  def to_gurmukhi
+    era = year < 1 ? :ਧੁੰਦਕਾਲ : :ਨਾਨਕਸ਼ਾਹੀ
+    "#{panjabi_numerals(day)} #{I18n.t(:nanakshahi_months, locale: :pa)[month]}, #{panjabi_numerals(year_zero_correction(year))} #{era}"
+  end
+
   protected
 
   # Implementation of spaceship operator to enable comparision
@@ -55,4 +72,22 @@ class Nanakshahi
       return 1
     end
   end
+
+  private
+
+  # Considering no year 0 just like in Gregorian
+  # Year 1 Dhundkaal precedes 1 Nanakshahi
+  def year_zero_correction(dyear)
+    dyear < 1 ? dyear.abs + 1 : dyear.abs
+  end
+
+  def panjabi_numerals(number)
+    # I18n.locale = :pa
+    number.to_s.chars.map { |digit| I18n.t(:digits, locale: :pa)[digit.to_i] }.join
+  end
 end
+
+# a = Nanakshahi.from_gregorian(1460, 9, 10)
+# p a
+# puts a
+# puts a.to_gurmukhi
