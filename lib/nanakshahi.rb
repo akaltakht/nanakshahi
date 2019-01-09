@@ -5,11 +5,7 @@ require "nanakshahi/version"
 require "nanakshahi/constants"
 require "nanakshahi/grid"
 require "nanakshahi/utils"
-
-# require "byebug"
-# require_relative "nanakshahi/constants"
-# require_relative "nanakshahi/gregorian"
-# require_relative "nanakshahi/grid"
+require "nanakshahi/date"
 
 # Nanakshahi Calendar date based on research by Pal Singh Purewal
 # @author Arvinder Singh
@@ -86,8 +82,3 @@ class Nanakshahi
     number.to_s.chars.map { |digit| I18n.t(:digits, locale: :pa)[digit.to_i] }.join
   end
 end
-
-# a = Nanakshahi.from_gregorian(1460, 9, 10)
-# p a
-# puts a
-# puts a.to_gurmukhi
