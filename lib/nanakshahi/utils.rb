@@ -9,10 +9,6 @@ module Utils
     # Start of time -  1 Chet, 1 Nanakshahi
     gdate = Date.new(gyear, gmonth, gday)
 
-    # Implement ਧੁੰਦਕਾਲ(Before Nanak - from Bhai Gurdas's vaar) later
-    # Any date prior to NANAKSHAHI_EPOCH_IN_GREGORIAN returns nil for now
-    # return nil if gdate < NANAKSHAHI_EPOCH_IN_GREGORIAN
-
     # Before Chet 1, it is previous year in Nanakshahi
     if (gmonth <= NANAKSHAHI_EPOCH_IN_GREGORIAN.month) && (gday < NANAKSHAHI_EPOCH_IN_GREGORIAN.day)
       nyear = gyear - NANAKSHAHI_EPOCH_IN_GREGORIAN.year
