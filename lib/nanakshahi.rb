@@ -16,6 +16,11 @@ class Nanakshahi
   extend Utils
   extend Grid
 
+  # Returns today as a Nanakshahi date
+  def self.today
+    Date.today.to_nanakshahi
+  end
+
   attr_reader :year, :month, :day
 
   def initialize(year = 1, month = 1, day = 1)

@@ -84,4 +84,8 @@ class NanakshahiTest < Minitest::Test
   def test_date_class_monkeypatching
     assert Date.new(2019, 1, 8).to_nanakshahi == Nanakshahi.new(550, 10, 26)
   end
+
+  def test_today_method
+    assert Nanakshahi.today == Date.today.to_nanakshahi
+  end
 end
