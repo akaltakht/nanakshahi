@@ -1,8 +1,8 @@
 # Nanakshahi
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/nanakshahi`. To experiment with that code, run `bin/console` for an interactive prompt.
+Nanakshahi is a ruby gem for Nanakshahi Calendar based on the [original work](http://www.purewal.biz/Gurbani_and_Nanakshahi_Calendar.pdf) by [Pal Singh Purewal](http://purewal.biz/).
 
-TODO: Delete this and the text above, and describe your gem
+It provides helper methods to convert a Gregorian or Common Era(CE) date into Nanakshahi date and vice versa.
 
 ## Installation
 
@@ -22,13 +22,43 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To start using Nanakshahi gem
 
-## Development
+```ruby
+require 'nanakshahi'
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+### Create a Nanakshahi date object
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```ruby
+date = Nanakshahi.new # Creates an object with 1 Chet, Nanakshahi
+date = Nanakshahi.new(550)
+date = Nanakshahi.new(550, 10)
+date = Nanakshahi.new(550, 10, 5)
+```
+
+### Using common calendar/gregorian date
+
+```ruby
+date = Nanakshahi.from_gregorian(2019,1,8)
+```
+
+### Nanakshahi date today
+
+```ruby
+date = Nanakshahi.today
+```
+
+### Converting date object to Nanakshahi
+
+Nankshahi gem monkey-patches `Date` class to provide it `to_nanakshahi` method
+
+```ruby
+date = Date.new(2019-2-18)
+p date.to_nanakshahi
+```
+
+For a complete list of all the methods, check out the documentation.
 
 ## Contributing
 
