@@ -3,8 +3,8 @@ require "i18n"
 I18n.load_path << Dir[File.expand_path("config/locales") + "/*.yml"]
 require "nanakshahi/version"
 require "nanakshahi/constants"
-require "nanakshahi/gregorian"
 require "nanakshahi/grid"
+require "nanakshahi/utils"
 
 # require "byebug"
 # require_relative "nanakshahi/constants"
@@ -17,7 +17,7 @@ require "nanakshahi/grid"
 class Nanakshahi
   include Comparable
   extend Constants
-  extend Gregorian
+  extend Utils
   extend Grid
 
   attr_reader :year, :month, :day

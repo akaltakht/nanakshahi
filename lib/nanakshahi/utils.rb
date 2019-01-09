@@ -1,6 +1,6 @@
 require "date"
 
-module Gregorian
+module Utils
   # #
   # classs method Gregorian to Nanakshahi date
   # returns a Nanakshahi date object

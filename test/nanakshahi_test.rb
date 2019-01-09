@@ -78,7 +78,6 @@ class NanakshahiTest < Minitest::Test
 
   # Test to_gurmukhi
   def test_to_gurmikhi_method
-    puts Nanakshahi.from_gregorian(1460, 9, 10).to_gurmukhi
     assert Nanakshahi.from_gregorian(1460, 9, 10).to_gurmukhi == "੨੬ ਭਾਦੋਂ, ੯ ਧੁੰਦਕਾਲ"
   end
 end
