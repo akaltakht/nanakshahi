@@ -56,6 +56,10 @@ class Nanakshahi
     "#{panjabi_numerals(day)} #{I18n.t(:nanakshahi_months, locale: :pa)[month]}, #{panjabi_numerals(year_zero_correction(year))} #{era}"
   end
 
+  def leap?
+    self.to_gregorian.leap?
+  end
+
   protected
 
   # Implementation of spaceship operator to enable comparision

@@ -100,4 +100,13 @@ class NanakshahiTest < Minitest::Test
   def test_day_method
     assert Nanakshahi.new(550, 10, 12).day == 12
   end
+
+  # Test for leap year
+  def test_nanak_550_is_not_leap_year
+    assert Nanakshahi.new(550, 10, 12).leap? == false
+  end
+
+  def test_nanak_551_is_leap_year
+    assert Nanakshahi.new(552).leap? == true
+  end
 end
