@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email = ["a@arvinderkang.com"]
 
   spec.summary = %q{Nanakshahi calendar by Pal Singh Purewal}
-  spec.description = %q{This gem returns is based on original nanakshahi calendar developed by Pal Singh Purewal}
+  spec.description = %q{Implementation of original nanakshahi calendar developed by Pal Singh Purewal}
   spec.homepage = "https://panjabilab.com"
   spec.license = "MIT"
 
