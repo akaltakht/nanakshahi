@@ -1,11 +1,15 @@
+# A module for date_grid class method. To be extended in nanakshahi.rb
+#
 module Grid
   # Class method that return a date grid
+  #
+  # The months follow the same index as MONTHS constant
+  #   therefore although in Gregorian calendar Poh is first
+  #   month of the nanakshahi year, it is at index 9
+  #   sort of a merry-go-round.
+  # @param [Integer] gyear Nankshahi Year
+  # @return [Array] A grid of all dates for that Nanakshahi year
   def date_grid(gyear)
-    # #
-    # The months follow the same index as MONTHS constant
-    #   therefore although in Gregorian calendar Poh is first
-    #   month of the nanakshahi year, it is at index 9
-    #   sort of a merry-go-round.
     [
       (Date.new(gyear, 3, 14)..Date.new(gyear, 4, 13)).to_a,
       (Date.new(gyear, 4, 14)..Date.new(gyear, 5, 14)).to_a,

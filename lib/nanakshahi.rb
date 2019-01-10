@@ -86,6 +86,7 @@ class Nanakshahi
   #   -1 if self < other
   #    0 if self == other
   #    1 if self > other
+  # @protected
   def <=>(other)
     return nil unless self.is_a?(Nanakshahi) && other.is_a?(Nanakshahi)
     if ((self.year < other.year) ||
@@ -106,6 +107,7 @@ class Nanakshahi
   #
   # @param [Integer] dyear Year
   # @return [Integer] Year corrected for year 0
+  # @private
   def year_zero_correction(dyear)
     dyear < 1 ? dyear.abs + 1 : dyear.abs
   end
@@ -114,6 +116,7 @@ class Nanakshahi
   #
   # @param [Integer] number A numeric usually date
   # @return [String] Panjabi representation of date
+  # @private
   def panjabi_numerals(number)
     number.to_s.chars.map { |digit| I18n.t(:digits, locale: :pa)[digit.to_i] }.join
   end
