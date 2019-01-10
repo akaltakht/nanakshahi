@@ -2,7 +2,6 @@ require "date"
 require "i18n"
 I18n.load_path << Dir[File.expand_path("config/locales") + "/*.yml"]
 require "nanakshahi/version"
-require "nanakshahi/constants"
 require "nanakshahi/grid"
 require "nanakshahi/utils"
 require "nanakshahi/date"
@@ -16,7 +15,6 @@ require "nanakshahi/date"
 # @attr_reader [Integer] day Day part of Nanakshahi date object
 class Nanakshahi
   include Comparable
-  extend Constants
   extend Utils
   extend Grid
 
