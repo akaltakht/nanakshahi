@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary = %q{Nanakshahi calendar by Pal Singh Purewal}
   spec.description = %q{This gem returns is based on original nanakshahi calendar developed by Pal Singh Purewal}
-  spec.homepage = "https://nanak.io"
+  spec.homepage = "https://panjabilab.com"
   spec.license = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
