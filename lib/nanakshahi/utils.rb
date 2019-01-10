@@ -1,10 +1,14 @@
 require "date"
 
+# A module for utility class methods. To be extended in nanakshahi.rb
+#
 module Utils
   NANAKSHAHI_EPOCH_IN_GREGORIAN = Date.new(1469, 3, 14)
-  # #
   # classs method Gregorian to Nanakshahi date
-  # returns a Nanakshahi date object
+  # @param [Integer] year Year part of gregorian Date
+  # @param [Integer] month Month part of gregorian Date
+  # @param [Integer] day Day part of gregorian Date
+  # @return [Nanakshahi] Nanakshahi date object
   def from_gregorian(gyear, gmonth, gday)
     # Start of time -  1 Chet, 1 Nanakshahi
     gdate = Date.new(gyear, gmonth, gday)
