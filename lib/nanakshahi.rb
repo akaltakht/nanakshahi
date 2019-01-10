@@ -10,6 +10,9 @@ require "nanakshahi/date"
 # Nanakshahi Calendar date based on research by Pal Singh Purewal
 # @author Arvinder Singh
 # @since 0.1.0
+# @attr_reader [Integer] year year part of Nanakshahi date object
+# @attr_reader [Integer] month month part of Nanakshahi date object
+# @attr_reader [Integer] day day part of Nanakshahi date object
 class Nanakshahi
   include Comparable
   extend Constants
@@ -23,6 +26,7 @@ class Nanakshahi
 
   attr_reader :year, :month, :day
 
+  # Creates new instance of Nanakshahi
   def initialize(year = 1, month = 1, day = 1)
     @day = day
     @month = month
