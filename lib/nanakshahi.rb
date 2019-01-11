@@ -76,6 +76,27 @@ class Nanakshahi
     self.to_gregorian.leap?
   end
 
+  # Return week of the day starting with Monday
+  #
+  # @return [Integer] The day index of the week
+  def wday
+    self.to_gregorian.wday
+  end
+
+  # Returns the day of the week in English
+  #
+  # @return [String] English representation of day of week
+  def wday_name
+    I18n.t(:day_names)[wday]
+  end
+
+  # Returns the day of the week in Gurmukhi
+  #
+  # @return [String] Gurmukhi representation of day of week
+  def vaar
+    I18n.t(:day_names, locale: :pa)[wday]
+  end
+
   protected
 
   # Implementation of spaceship operator to enable comparision

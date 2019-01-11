@@ -109,4 +109,12 @@ class NanakshahiTest < Minitest::Test
   def test_nanak_551_is_leap_year
     assert Nanakshahi.new(552).leap? == true
   end
+
+  def test_2018_jan_10_should_be_a_thursday
+    assert Nanakshahi.from_gregorian(2018,1,10).wday_name == 'Thursday'    
+  end
+
+  def test_2018_jan_10_should_be_a_ਵੀਰਵਾਰ
+    assert Nanakshahi.from_gregorian(2018,1,10).vaar == 'ਵੀਰਵਾਰ'    
+  end
 end
