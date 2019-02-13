@@ -5,6 +5,7 @@ require "nanakshahi/version"
 require "nanakshahi/grid"
 require "nanakshahi/utils"
 require "nanakshahi/date"
+require "nanakshahi/gurpurab"
 
 # Nanakshahi Calendar date based on research by Pal Singh Purewal
 # @author Arvinder Singh
@@ -95,6 +96,20 @@ class Nanakshahi
   # @return [String] Gurmukhi representation of day of week
   def vaar
     I18n.t(:day_names, locale: :pa)[wday]
+  end
+
+  # Returns if a Gurpurab falls on this day
+  #
+  # @return [Boolean] True if it is a Gurpurab
+  def gurpurab?
+    !! GURPURB_IN_NS_MONTHS[month][day]
+  end
+
+  # Returns gurpurabs on the day or nil
+  #
+  # return [Array] All Gurpurbs that fall on the day
+  def gurpurabs
+    GURPURB_IN_NS_MONTHS[month][day]
   end
 
   protected

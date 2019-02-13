@@ -53,6 +53,18 @@ date = Nanakshahi.from_gregorian(2019,1,8)
 date = Nanakshahi.today
 ```
 
+### Is it a gurpurab?
+
+```ruby
+Nanakshahi.new(550,1,1).gurpurab?
+```
+
+### What Gurpurabs fall on this day?
+
+```ruby
+Nanakshahi.new(550,1,1).gurpurabs
+```
+
 ### Converting date object to Nanakshahi
 
 Nankshahi gem monkey-patches `Date` class to provide it `to_nanakshahi` method

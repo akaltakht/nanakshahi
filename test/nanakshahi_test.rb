@@ -111,10 +111,30 @@ class NanakshahiTest < Minitest::Test
   end
 
   def test_2018_jan_10_should_be_a_thursday
-    assert Nanakshahi.from_gregorian(2018,1,10).wday_name == 'Thursday'    
+    assert Nanakshahi.from_gregorian(2018,1,10).wday_name == 'Thursday'
   end
 
   def test_2018_jan_10_should_be_a_ਵੀਰਵਾਰ
-    assert Nanakshahi.from_gregorian(2018,1,10).vaar == 'ਵੀਰਵਾਰ'    
+    assert Nanakshahi.from_gregorian(2018,1,10).vaar == 'ਵੀਰਵਾਰ'
+  end
+
+  def test_chet_1_should_be_gurpurab
+    assert Nanakshahi.new(550,1,1).gurpurab?
+  end
+
+  def test_chet_2_should_not_be_gurpurab
+    assert ! Nanakshahi.new(550,1,2).gurpurab?
+  end
+
+  def test_gurpurabs_method_returns_vaisakhi_on_vaisakh_1
+    assert Nanakshahi.new(550,2,1).gurpurabs.include?('Vaisakhi')
+  end
+
+  def test_no_gurpurabs_on_vaisakh_2
+    assert ! Nanakshahi.new(550,2,2).gurpurabs
+  end
+
+  def test_gurupurabs_methods_returns_atleast_3_gurpurab_on_vaisakh_2
+    assert Nanakshahi.new(550,2,3).gurpurabs.size >= 3
   end
 end
