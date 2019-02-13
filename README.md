@@ -1,6 +1,6 @@
 # ਨਾਨਕਸ਼ਾਹੀ (Nanakshahi)
 
-ਨਾਨਕਸ਼ਾਹੀ ਇੱਕ ਰੂਬੀ ਪਰੋਗਰਾਮਿੰਗ ਭਾਸ਼ਾ ਚ ਲਿਖਿਆ ਗਿਆ gem ਹੈ ਜੋ ਕਿ [ਪਾਲ ਸਿੰਘ ਪੁਰੇਵਾਲ](http://purewal.biz/) ਦੁਆਰਾ ਲਿਖੇ ਗਏ [ਮੂਲ ਨਾਨਕਸ਼ਾਹੀ ਕਲੰਡਰ]((http://www.purewal.biz/Gurbani_and_Nanakshahi_Calendar.pdf) ਤੇ ਅਧਾਰਿਤ ਹੈ।
+ਨਾਨਕਸ਼ਾਹੀ ਇੱਕ ਰੂਬੀ ਪਰੋਗਰਾਮਿੰਗ ਭਾਸ਼ਾ ਚ ਲਿਖਿਆ ਗਿਆ gem ਹੈ ਜੋ ਕਿ [ਪਾਲ ਸਿੰਘ ਪੁਰੇਵਾਲ](http://purewal.biz/) ਦੁਆਰਾ ਲਿਖੇ ਗਏ [ਮੂਲ ਨਾਨਕਸ਼ਾਹੀ ਕਲੰਡਰ](http://www.purewal.biz/Gurbani_and_Nanakshahi_Calendar.pdf) ਤੇ ਅਧਾਰਿਤ ਹੈ।
 
 ਇਹ ਆਮ/ਗਰਿਗੋਰੀਅਨ ਕਲੰਡਰ ਦੀਆਂ ਤਰੀਕਾਂ ਤੋਂ ਨਾਨਕਸ਼ਾਹੀ ਤੇ ਵਾਪਸ ਬਦਲਣ ਦੇ ਤਰੀਕੇ ਮੁਹੱੲੀਆ ਕਰਵਾਉਂਦਾ ਹੈ। ਤੁਸੀਂ ਇਸ ਨੂੰ ਕਿਸੇ ਵੀ ਰੂਬੀ ਪਰੋਗਰਾਮ ਵਿੱਚ ਨਾਨਕਸ਼ਾਹੀ ਤਰੀਕਾਂ ਵਰਤਣ ਲੲੀ ਵਰਤ ਸਕਦੇ ਹੋ।
 
@@ -92,7 +92,7 @@ date = Nanakshahi.new(1400-2-18)
 puts date.to_gurmukhi
 ```
 
-For a complete list of all the methods, check out the documentation.
+For a complete list of all the methods, check out [the documentation](https://www.rubydoc.info/gems/nanakshahi).
 
 ## Contributing
 
