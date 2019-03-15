@@ -1,6 +1,5 @@
 require "date"
 require "i18n"
-I18n.load_path << Dir[File.expand_path("config/locales") + "/*.yml"]
 require "nanakshahi/version"
 require "nanakshahi/grid"
 require "nanakshahi/utils"
@@ -15,6 +14,8 @@ require "nanakshahi/gurpurab"
 # @attr_reader [Integer] month Month part of Nanakshahi date object
 # @attr_reader [Integer] day Day part of Nanakshahi date object
 class Nanakshahi
+  I18n.load_path << Dir[File.expand_path("config/locales") + "/*.yml"]
+  I18n.available_locales = [:en, :pa]
   include Comparable
   extend Utils
   extend Grid
