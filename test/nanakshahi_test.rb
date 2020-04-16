@@ -140,5 +140,5 @@ class NanakshahiTest < Minitest::Test
 
   def test_march_13_2020_returns_1_vaisakh_552
     assert Nanakshahi.new(552,2,1) == Date.new(2020,4,14).to_nanakshahi
-  en
+  end
 end
