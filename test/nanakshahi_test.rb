@@ -137,4 +137,8 @@ class NanakshahiTest < Minitest::Test
   def test_gurupurabs_methods_returns_atleast_3_gurpurab_on_vaisakh_2
     assert Nanakshahi.new(550,2,3).gurpurabs.size >= 3
   end
+
+  def test_march_13_2020_returns_1_vaisakh_552
+    assert Nanakshahi.new(552,2,1) == Date.new(2020,4,14).to_nanakshahi
+  en
 end
