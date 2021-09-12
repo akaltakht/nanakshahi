@@ -1,4 +1,11 @@
 # coding: UTF-8
+=== 0.2.0 / 2021-09-12
+
+Bug fixes:
+
+- Updated rake 13.0.6 (was 13.0.1)
+- Updated minitest 5.14.4 (was 5.14.0)
+- Updated i18n 1.8.10 (was 1.8.2)
 
 === 0.1.9 / 2020-04-15
 
