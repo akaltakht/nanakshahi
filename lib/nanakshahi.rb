@@ -42,15 +42,7 @@ class Nanakshahi
   #
   # @return [Date] Converts nanakshahi into corresponding gregorian# as Date object
   def to_gregorian
-    last_nmonth_of_gyear = 10 # ਪੋਹ
-    last_nday_of_gyear = 18 # ੧੮
-
-    if month <= last_nmonth_of_gyear && day <= last_nday_of_gyear
-      gyear = year + 1468
-    else
-      gyear = year + 1469
-    end
-
+    gyear = year + 1468
     nanakshahi_months = self.class.date_grid(gyear)
     nanakshahi_months[month - 1][day - 1]
   end
