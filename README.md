@@ -96,7 +96,7 @@ For a complete list of all the methods, check out [the documentation](https://ww
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/punjab/nanakshahi.
+Bug reports and pull requests are welcome on GitHub at https://github.com/akaltakht/nanakshahi.
 
 ## License
 
