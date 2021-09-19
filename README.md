@@ -1,4 +1,4 @@
-# ਨਾਨਕਸ਼ਾਹੀ (Nanakshahi)
+# ਨਾਨਕਸ਼ਾਹੀ (Nanakshahi) [![Gem Version](https://badge.fury.io/rb/nanakshahi.svg)](https://badge.fury.io/rb/nanakshahi) [![Build Status](https://github.com/akaltakht/nanakshahi/workflows/stable/badge.svg?branch=master)]
 
 ਨਾਨਕਸ਼ਾਹੀ ਇੱਕ ਰੂਬੀ ਪਰੋਗਰਾਮਿੰਗ ਭਾਸ਼ਾ ਚ ਲਿਖਿਆ ਗਿਆ gem ਹੈ ਜੋ ਕਿ [ਪਾਲ ਸਿੰਘ ਪੁਰੇਵਾਲ](http://purewal.biz/) ਦੁਆਰਾ ਲਿਖੇ ਗਏ [ਮੂਲ ਨਾਨਕਸ਼ਾਹੀ ਕਲੰਡਰ](http://www.purewal.biz/Gurbani_and_Nanakshahi_Calendar.pdf) ਤੇ ਅਧਾਰਿਤ ਹੈ।
 
