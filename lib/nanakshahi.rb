@@ -68,7 +68,7 @@ class Nanakshahi
   # @return [String] Shahmukhi String representation of Nanakshahi
   def to_shahmukhi
     era = year < 1 ? :دھندکال  : :نانکشاھی 
-    "#{panjabi_numerals(day)} #{I18n.t(:nanakshahi_months, locale: :pa_PK)[month]}, #{panjabi_numerals(year_zero_correction(year))} #{era}"
+    "#{shahmukhi_numerals(day)} #{I18n.t(:nanakshahi_months, locale: :pa_PK)[month]} #{shahmukhi_numerals(year_zero_correction(year))} #{era} "
   end
 
   # Checks Nanakshahi leap year
@@ -156,5 +156,14 @@ class Nanakshahi
   # @private
   def panjabi_numerals(number)
     number.to_s.chars.map { |digit| I18n.t(:digits, locale: :pa)[digit.to_i] }.join
+  end
+
+  # Converts english numerals to Shahmukhi
+  #
+  # @param [Integer] number A numeric usually date
+  # @return [String] Shahmukhi representation of date
+  # @private
+  def shahmukhi_numerals(number)
+    number.to_s.chars.map { |digit| I18n.t(:digits, locale: :pa_PK)[digit.to_i] }.join
   end
 end

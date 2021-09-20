@@ -81,6 +81,10 @@ class NanakshahiTest < Minitest::Test
     assert Nanakshahi.from_gregorian(1460, 9, 10).to_gurmukhi == "੨੬ ਭਾਦੋਂ, ੯ ਧੁੰਦਕਾਲ"
   end
 
+  def test_to_shahmukhi_method
+    assert Nanakshahi.from_gregorian(2021, 9, 20).to_shahmukhi == "۶ اسو ۵۵۳ نانکشاھی " 
+  end
+
   def test_date_class_monkeypatching
     assert Date.new(2019, 1, 8).to_nanakshahi == Nanakshahi.new(550, 10, 26)
   end
