@@ -37,21 +37,19 @@ require 'nanakshahi'
 
 ```ruby
 date = Nanakshahi.new # Creates an object with 1 Chet, Nanakshahi
-date = Nanakshahi.new(550)
-date = Nanakshahi.new(550, 10)
-date = Nanakshahi.new(550, 10, 5)
+date = Nanakshahi.new(553)
+date = Nanakshahi.new(553, 7)
+date = Nanakshahi.new(550, 7, 6)
+date = Nanakshahi.today
 ```
 
 ### Using common calendar/gregorian date
 
 ```ruby
-date = Nanakshahi.from_gregorian(2019,1,8)
-```
-
-### Nanakshahi date today
-
-```ruby
-date = Nanakshahi.today
+date = Nanakshahi.from_gregorian(2021,9,21)
+=> #<Nanakshahi:0x00007fbec18410e8 @day=7, @month=7, @year=553>
+ndate = date.to_gregorian
+=> #<Date: 2021-09-21 ((2459479j,0s,0n),+0s,2299161j)>
 ```
 
 ### Is it a gurpurab?
@@ -102,6 +100,17 @@ puts date.to_gurmukhi
 ```ruby
 date = Nanakshahi.today
 puts date.to_shahmukhi
+```
+
+### Recommendations
+The following was not part of the seminal work by Pal Singh Purewal, but constituted part of recommendations in our paper [Building an Open-Source Nanakshahi Calendar: Identity and a Spiritual and Computational Journey(Singh et al., 2020)](https://sikhresearchjournal.org/building-an-open-source-nanakshahi-calendar-identity-and-a-spiritual-and-computational-journey-by-arvinder-singh-amandeep-singh-amarpreet-singh-harvinder-singh-parm-singh/)
+
+### Dhundkaal - The era of the fog
+
+```ruby
+date = Nanakshahi.from_gregorian(1468,1,1)
+date.to_s
+=> "19 Poh, 2 Dhundkaal"
 ```
 
 For a complete list of all the methods, check out [the documentation](https://www.rubydoc.info/gems/nanakshahi).
