@@ -77,8 +77,12 @@ class NanakshahiTest < Minitest::Test
   end
 
   # Test to_gurmukhi
-  def test_to_gurmikhi_method
+  def test_to_gurmukhi_method
     assert Nanakshahi.from_gregorian(1460, 9, 10).to_gurmukhi == "੨੬ ਭਾਦੋਂ, ੯ ਧੁੰਦਕਾਲ"
+  end
+
+  def test_to_shahmukhi_method
+    assert Nanakshahi.from_gregorian(2021, 9, 20).to_shahmukhi == "۶ اسو ۵۵۳ نانکشاھی " 
   end
 
   def test_date_class_monkeypatching
@@ -137,10 +141,6 @@ class NanakshahiTest < Minitest::Test
   def test_gurupurabs_methods_returns_atleast_3_gurpurab_on_vaisakh_2
     assert Nanakshahi.new(550,2,3).gurpurabs.size >= 3
   end
-
-  # def test_march_13_2020_returns_1_vaisakh_552
-  #   assert Nanakshahi.new(552,2,1) == Date.new(2020,4,14).to_nanakshahi
-  # end
 
   def test_gregorian_to_nanakshahi_back_conversion
     assert Nanakshahi.new(553, 6, 28).to_gregorian.to_s == "2021-09-12"
