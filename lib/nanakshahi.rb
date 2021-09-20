@@ -15,7 +15,7 @@ require "nanakshahi/gurpurab"
 # @attr_reader [Integer] day Day part of Nanakshahi date object
 class Nanakshahi
   I18n.load_path << Dir[File.expand_path("config/locales") + "/*.yml"]
-  I18n.available_locales = [:en, :pa]
+  I18n.available_locales = [:en, :pa, :pa_PK]
   include Comparable
   extend Utils
   extend Grid
@@ -61,6 +61,14 @@ class Nanakshahi
   def to_gurmukhi
     era = year < 1 ? :ਧੁੰਦਕਾਲ : :ਨਾਨਕਸ਼ਾਹੀ
     "#{panjabi_numerals(day)} #{I18n.t(:nanakshahi_months, locale: :pa)[month]}, #{panjabi_numerals(year_zero_correction(year))} #{era}"
+  end
+
+  # Shahmukhi String representation of Nanakshahi object
+  #
+  # @return [String] Shahmukhi String representation of Nanakshahi
+  def to_shahmukhi
+    era = year < 1 ? :دھندکال  : :نانکشاھی 
+    "#{panjabi_numerals(day)} #{I18n.t(:nanakshahi_months, locale: :pa_PK)[month]}, #{panjabi_numerals(year_zero_correction(year))} #{era}"
   end
 
   # Checks Nanakshahi leap year
