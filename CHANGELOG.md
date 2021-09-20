@@ -1,4 +1,13 @@
 # coding: UTF-8
+=== 0.3 / 2021-09-20
+
+Features:
+
+- Now supports Shahmukhi Script of Panjabi language via `to_shahmukhi` method
+
+Bug fixes:
+- Fixed a bug which returned incorrect `to_gregorian method`
+
 === 0.2.0 / 2021-09-12
 
 Bug fixes:
