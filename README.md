@@ -77,6 +77,8 @@ p date.to_nanakshahi
 
 ### Printing Nanakshahi date
 
+#### Roman
+
 `to_s` method prints Nanakshahi date either Nanakshahi or Dhundkaal suffix (pre-Guru Nanak). To take care of 0 year correction, like gregorian, it is assumed that 1 Dhundkaal precedes 1 Nanakshahi when printed with suffix.
 
 ```ruby
@@ -84,13 +86,22 @@ date = Nanakshahi.new(1400-2-18)
 puts date
 ```
 
-### To Gurmukhi
+#### Gurmukhi
 
 `to_gurmukhi` prints the date in Gurmukhi characters, complete with Gurmukhi numerals.
 
 ```ruby
 date = Nanakshahi.new(1400-2-18)
 puts date.to_gurmukhi
+```
+
+#### Shahmukhi
+
+`to_shahmukhi` prints the date in Shahmukhi characters, complete with Shahmukhi numerals.
+
+```ruby
+date = Nanakshahi.today
+puts date.to_shahmukhi
 ```
 
 For a complete list of all the methods, check out [the documentation](https://www.rubydoc.info/gems/nanakshahi).
